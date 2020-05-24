@@ -1,0 +1,39 @@
+{
+  "name": "daburgerapp",
+  "version": "1.0.0",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). The app follows the MVC design pattern; use Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deawar/DaBurgerApp.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Node",
+    "Express",
+    "Handlebars",
+    "ORM",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Dean Warren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deawar/DaBurgerApp/issues"
+  },
+  "homepage": "https://github.com/deawar/DaBurgerApp#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4"
+  }
+}

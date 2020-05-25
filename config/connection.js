@@ -15,9 +15,13 @@ if (process.env.JAWSDB_URL) {
         database: "burgers_db"
     });
 }
-let PID = proc.pid;
+// Make connection.
 connection.connect(function(err) {
-    if (err) throw err;
-});
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
+    console.log("Connected as id " + connection.threadId);
+  });
 
 module.exports = connection;

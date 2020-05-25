@@ -33,6 +33,7 @@ function objToSql(ob) {
 const orm = {
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
+        console.log("selectAll queryString: ",queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;

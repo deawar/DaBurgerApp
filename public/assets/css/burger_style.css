@@ -1,7 +1,16 @@
+
+.jumbotron {
+  /*margin-top: 20px;*/
+  background-image: url("https://media.giphy.com/media/qf7u3xRVQWEKI/giphy.gif");
+  background-size: cover;
+  color: #f58d42;
+}
+
 li {
-    /*padding: 5px;
-    margin: 5px;*/
+    padding: 5px;
+    margin: 5px;
     background: #faebd7;
+    list-style-type: none;
   }
   
   .label {

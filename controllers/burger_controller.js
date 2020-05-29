@@ -11,13 +11,16 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    console.log("In Get route hbsObject: ",hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create(["burger_name", "devoured"], [req.body.name, req.body.burger], function(result) {
+  burger.create([
+    "burger_name", "devoured"
+  ], 
+    [req.body.name, req.body.devoured], function(result) {
     // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
@@ -26,11 +29,11 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   console.log("burger_controller.js condition: ",condition);
-  console.log("condition", condition);
-
+  
   burger.update(
     {
-      devoured: req.body.burger
+      devoured: req.body.devoured
+      //devoured: req.body.burger
     },
     condition,
     function(result) {

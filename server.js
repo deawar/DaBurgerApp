@@ -1,5 +1,6 @@
 var express = require("express");
-
+var process = require('process');
+const pid = process.pid;
 var PORT = process.env.PORT || 3000;
 
 var app = express();
@@ -23,5 +24,5 @@ var routes = require("./controllers/burger_controller.js");
 app.use(routes);
 
 app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+  console.log("PID: "+ pid + "\nApp now listening at localhost:" + PORT);
 });

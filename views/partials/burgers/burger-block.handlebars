@@ -1,7 +1,11 @@
 <li>
-	{{name}}
-
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
-		{{#if devour}}Time to EAT Da Burger!{{else}}Burgers eaten!{{/if}}
+	<button class="change-devour btn btn-outline-primary btn-sm mb-1" type="button" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devoured}}
+			Burgers eaten!
+		{{else}}
+			EAT Da Burger!
+		{{/if}}
 	</button>
+	#{{id}} {{burger_name}}
+
 </li>

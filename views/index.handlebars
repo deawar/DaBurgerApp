@@ -1,38 +1,72 @@
-<h1>Da Burger Application</h1>
+<div class="jumbotron">
+<h1 class="card-title text-center">Da Burger Application</h1>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-sm-5">
+    <div class="card-deck">
+      <div class="card">
+      <h2 class="text-center">Burgers to be Devoured!</h2>
 
-<h2>Burgers to be Devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devour}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers Eaten!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devour}}
-      {{> burgers/burger-block devour=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bur">Type of Burger:</label>
-    <input type="text" id="bur" name="name">
+        <div class="card-body mx-4">
+          <img src="../assets/img/burger7.gif" class="card-img-top mb-3 rounded img-fluid" alt="cheeseburger">
+          <ul class="list-group list-group-flush">
+            {{#each burgers}}
+              {{#unless devoured}}
+                {{> burgers/burger-block devour=1}}
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="devo">Devour?</label><br>
-    <input type="radio" name="devour" value="0" checked> Eaten!<br>
-    <input type="radio" name="devour" value="1"> To Be Eaten!!
+<div class="col-sm-3">
+  <div class="card-deck">
+    <div class="card" style="background-color: #faebd7;">
+      <h2 class="card-title text-center">Add a Burger</h2>
+        <div class="card-body mx-3">
+              <img src="../assets/img/Burger1.gif" class="card-img-top rounded mb-3" alt="cheeseburger">
+              <form class="create-form">
+              <div class="form-group form-control form-control-lg">
+                <label class = "mb-3" for="bur">Type of Burger:</label>
+                <input type="text" id="bur" name="name" placeholder="Type of Burger">
+              </div><br><br>
+              
+              <div class="form-group">
+                <label for="devo">Devour?</label><br>
+                <input class="form-check-input" type="radio" name="devour" value="0" checked> Eaten!<br>
+                <input class="form-check-input" type="radio" name="devour" value="1"> To Be Eaten!!
+              </div>
+              <button class="btn btn-outline-primary btn-sm" type="submit">Add Burger</button>
+              </form>
+        </div>
+    </div>
   </div>
+</div>  
+  <div class="col-sm-4">
+    <div class="card-deck">
+      <div class="card ">
+      <h2 class="card-title text-center">Burgers Eaten!</h2>
+        <img src="../assets/img/eaten2.gif" class="card-img-top rounded img-fluid p-6" alt="...">
+        <div class="card-body mx-3 overflow-auto">
+          <ul class="list-group list-group-flush">
+            {{#each burgers}}
+              {{#if devoured}}
+                {{> burgers/burger-block devour=0}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <button type="submit">Add Burger</button>
-</form>
+<div class="container-fluid">
+  <footer mt-3>
+    <p class="text-center">Coded by Dean Warren 2020</p>
+  </footer>
+</div>
+
+</div>
